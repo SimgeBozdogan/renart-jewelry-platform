@@ -1,0 +1,44 @@
+.star-rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.star {
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.star-full {
+  color: #ffa500;
+}
+
+.star-half {
+  color: #ffa500;
+}
+
+.star-empty {
+  color: #ddd;
+}
+
+.rating-text {
+  font-size: 12px;
+  color: #666;
+  margin-left: 8px;
+  font-weight: 400;
+}
+
+/* Hover effect for interactivity */
+.star-rating:hover .star {
+  transform: scale(1.1);
+}
+
+@media (max-width: 480px) {
+  .star {
+    font-size: 10px;
+  }
+  
+  .rating-text {
+    font-size: 10px;
+  }
+} 
