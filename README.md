@@ -72,8 +72,8 @@ jewelry-app/
 
 1. **Clone the repository**
 ```bash
-git clone <repository-url>
-cd jewelry-app
+git clone https://github.com/SimgeBozdogan/renart-jewelry-platform.git
+cd renart-jewelry-platform
 ```
 
 2. **Install dependencies**
@@ -152,4 +152,4 @@ This project was developed as a case study for Renart Full Stack Development Int
 
 ---
 
-**Developed with ❤️ for Renart** 
+**Developed with ❤️ for Renart**
