@@ -29,12 +29,10 @@ const ProductList = () => {
     try {
       setLoading(true);
       
-      // Fetch data from local JSON file
       const response = await fetch('/products.json');
       const rawProducts = await response.json();
       
-      // Calculate and format price like backend
-      const goldPrice = 65.0; // Fixed gold price
+      const goldPrice = 65.0;
       const formattedProducts = rawProducts.map((product, index) => ({
         id: index + 1,
         name: product.name,

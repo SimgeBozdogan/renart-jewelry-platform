@@ -8,17 +8,14 @@ const StarRating = ({ rating, maxStars = 5 }) => {
 
   return (
     <div className="star-rating">
-      {/* Dolu yıldızlar */}
       {[...Array(fullStars)].map((_, index) => (
         <i key={`full-${index}`} className="fas fa-star star star-full"></i>
       ))}
       
-      {/* Yarım yıldız */}
       {hasHalfStar && (
         <i className="fas fa-star-half-alt star star-half"></i>
       )}
       
-      {/* Boş yıldızlar */}
       {[...Array(emptyStars)].map((_, index) => (
         <i key={`empty-${index}`} className="far fa-star star star-empty"></i>
       ))}

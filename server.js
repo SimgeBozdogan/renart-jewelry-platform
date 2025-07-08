@@ -20,7 +20,6 @@ async function getGoldPrice() {
       return goldPrice;
     }
 
-    // Add timeout for fast failure
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 3000); // 3 second timeout
 
@@ -36,11 +35,11 @@ async function getGoldPrice() {
     if (data && data.price) {
       goldPrice = data.price / 31.1035;
       lastUpdate = now;
-      console.log(`Gold price updated: $${goldPrice.toFixed(2)}/gram`);
+      console.log('price updated');
       return goldPrice;
     }
   } catch (error) {
-    console.log('Primary API failed, trying fallback...');
+    console.log('api failed');
     try {
       const controller2 = new AbortController();
       const timeoutId2 = setTimeout(() => controller2.abort(), 3000);
@@ -57,11 +56,11 @@ async function getGoldPrice() {
       if (data?.data?.rates?.USD) {
         goldPrice = parseFloat(data.data.rates.USD) / 31.1035;
         lastUpdate = now;
-        console.log(`Gold price updated (fallback): $${goldPrice.toFixed(2)}/gram`);
+        console.log('fallback success');
         return goldPrice;
       }
     } catch (e) {
-      console.log('All APIs failed, using cached gold price:', goldPrice);
+      console.log('using cached price');
     }
   }
   
