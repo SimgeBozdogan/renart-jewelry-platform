@@ -29,12 +29,12 @@ const ProductList = () => {
     try {
       setLoading(true);
       
-      // Local JSON dosyasından veri çek
+      // Fetch data from local JSON file
       const response = await fetch('/products.json');
       const rawProducts = await response.json();
       
-      // Backend'deki gibi price hesapla ve format et
-      const goldPrice = 65.0; // Sabit altın fiyatı
+      // Calculate and format price like backend
+      const goldPrice = 65.0; // Fixed gold price
       const formattedProducts = rawProducts.map((product, index) => ({
         id: index + 1,
         name: product.name,
@@ -45,7 +45,7 @@ const ProductList = () => {
         rating: (product.popularityScore * 5).toFixed(1)
       }));
       
-      // Filter uygula
+      // Apply filters
       let filtered = formattedProducts;
       if (filterParams.minPrice) filtered = filtered.filter(p => p.price >= parseFloat(filterParams.minPrice));
       if (filterParams.maxPrice) filtered = filtered.filter(p => p.price <= parseFloat(filterParams.maxPrice));

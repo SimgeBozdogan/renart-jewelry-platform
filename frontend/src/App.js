@@ -19,7 +19,7 @@ function App() {
       
       <footer className="App-footer">
         <div className="container">
-          <p>&copy; 2024 Lüks Mücevher Koleksiyonu. Tüm hakları saklıdır.</p>
+          <p>&copy; 2024 Jewelry Collection. All rights reserved.</p>
         </div>
       </footer>
     </div>

@@ -20,9 +20,9 @@ async function getGoldPrice() {
       return goldPrice;
     }
 
-    // Timeout ekleyerek hızlı fail
+    // Add timeout for fast failure
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 3000); // 3 saniye timeout
+    const timeoutId = setTimeout(() => controller.abort(), 3000); // 3 second timeout
 
     const response = await fetch('https://api.metals.live/v1/spot/gold', {
       signal: controller.signal,
